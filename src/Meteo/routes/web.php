@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\MeteoController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/Meteo', function () {
-    return view('welcome');
+Route::prefix('/Meteo')->group(function () {
+
+    Route::get('/', [MeteoController::class, 'home'])->name('home');
+    Route::post('/forecast', [MeteoController::class, 'forecast'])->name('forecast');
+
 });
