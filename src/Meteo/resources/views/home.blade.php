@@ -23,10 +23,12 @@
             <button type="submit">Forecast</button>
         </form>
         <div>
+            @isset($res)
             <ul>
                 <li><b>temperature_2m: </b> {{ $res['current']['temperature_2m'] }}</li>
                 <li><b>wind_speed_10m: </b> {{ $res['current']['wind_speed_10m'] }}</li>
             <ul>
+            @endisset
         </div>
     </div>
 </article>
