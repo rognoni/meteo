@@ -28,7 +28,7 @@
   <body>
     <nav class="container">
       <ul>
-        <li><strong>☀️ <a href="{{ route('home') }}">meteo</a></strong></li>
+        <li><strong>☀️ <a href="{{ route('forecast') }}">meteo</a></strong></li>
       </ul>
       <ul>
         <li><a href="https://github.com/rognoni/meteo">GitHub</a></li>

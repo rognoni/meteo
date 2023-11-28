@@ -17,7 +17,11 @@ use App\Http\Controllers\MeteoController;
 
 Route::prefix('/Meteo')->group(function () {
 
-    Route::get('/', [MeteoController::class, 'home'])->name('home');
-    Route::post('/forecast', [MeteoController::class, 'forecast'])->name('forecast');
+    Route::get('/', function () {
+        return redirect('/Meteo/forecast');
+    });
+
+    Route::get('/forecast', [MeteoController::class, 'forecast'])->name('forecast');
+    Route::post('/forecast', [MeteoController::class, 'forecastSubmit']);
 
 });
