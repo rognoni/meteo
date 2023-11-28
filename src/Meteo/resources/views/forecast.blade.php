@@ -14,11 +14,11 @@
             @endif
             <div>
                 <label for="latitude">Latitude</label>
-                <input type="text" id="latitude" name="latitude" value="{{ old('latitude', $latitude) }}" placeholder="" maxlength="100">
+                <input type="text" id="latitude" name="latitude" value="{{ old('latitude', $latitude) }}" placeholder="" maxlength="20">
             </div>
             <div>
                 <label for="longitude">Longitude</label>
-                <input type="text" id="longitude" name="longitude" value="{{ old('longitude', $longitude) }}" placeholder=""  maxlength="100">
+                <input type="text" id="longitude" name="longitude" value="{{ old('longitude', $longitude) }}" placeholder=""  maxlength="20">
             </div>
             <button type="submit">Forecast</button>
         </form>
