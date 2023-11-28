@@ -17,7 +17,7 @@ class MeteoService
                                                         'longitude' => $longitude,
                                                         'current' => 'temperature_2m,wind_speed_10m']]);
 
-            $json = json_decode($text, true);
+            $json = json_decode($res->getBody(), true);
 
         } catch (\Exception $e) {
             $json = MeteoService::forecast_db($latitude, $longitude);
