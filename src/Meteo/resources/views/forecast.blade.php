@@ -25,10 +25,10 @@
         <div style="padding: 20px">
             @isset($res['current'])
             <ul>
-                <li><b>time: </b> {{ $res['current']['time'] }}</li>
-                <li><b>interval: </b> {{ $res['current']['interval'] }}</li>
-                <li><b>temperature_2m: </b> {{ $res['current']['temperature_2m'] }}</li>
-                <li><b>wind_speed_10m: </b> {{ $res['current']['wind_speed_10m'] }}</li>
+                <li><b>time: </b> {{ $res['current']['time'] }} ({{ $res['current_units']['time'] }})</li>
+                <li><b>interval: </b> {{ $res['current']['interval'] }} {{ $res['current_units']['interval'] }}</li>
+                <li><b>temperature_2m: </b> {{ $res['current']['temperature_2m'] }} {{ $res['current_units']['temperature_2m'] }}</li>
+                <li><b>wind_speed_10m: </b> {{ $res['current']['wind_speed_10m'] }} {{ $res['current_units']['wind_speed_10m'] }}</li>
             <ul>
             @endisset
 
