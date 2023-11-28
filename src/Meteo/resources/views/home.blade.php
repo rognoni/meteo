@@ -14,19 +14,27 @@
             @endif
             <div>
                 <label for="latitude">Latitude</label>
-                <input type="text" id="latitude" name="latitude" value="{{ old('latitude') }}" placeholder="" maxlength="100">
+                <input type="text" id="latitude" name="latitude" value="{{ old('latitude', $latitude) }}" placeholder="" maxlength="100">
             </div>
             <div>
                 <label for="longitude">Longitude</label>
-                <input type="text" id="longitude" name="longitude" value="{{ old('longitude') }}" placeholder=""  maxlength="100">
+                <input type="text" id="longitude" name="longitude" value="{{ old('longitude', $longitude) }}" placeholder=""  maxlength="100">
             </div>
             <button type="submit">Forecast</button>
         </form>
-        <div>
-            @isset($res)
+        <div style="padding: 20px">
+            @isset($res['current'])
             <ul>
+                <li><b>time: </b> {{ $res['current']['time'] }}</li>
+                <li><b>interval: </b> {{ $res['current']['interval'] }}</li>
                 <li><b>temperature_2m: </b> {{ $res['current']['temperature_2m'] }}</li>
                 <li><b>wind_speed_10m: </b> {{ $res['current']['wind_speed_10m'] }}</li>
+            <ul>
+            @endisset
+
+            @isset($res['error'])
+            <ul class="error">
+                <li><b>Error: </b> {{ $res['reason'] }}</li>
             <ul>
             @endisset
         </div>

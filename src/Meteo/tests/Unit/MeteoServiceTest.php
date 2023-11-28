@@ -32,4 +32,15 @@ class MeteoServiceTest extends TestCase
 
         $this->assertArrayHasKey('current', $res);
     }
+
+    /*
+        ./vendor/bin/phpunit --filter test_forecast_string_parameters tests/Unit/MeteoServiceTest.php
+    */
+    public function test_forecast_string_parameters(): void
+    {
+        $res = MeteoService::forecast('test', 'test');
+        var_dump($res);
+
+        $this->assertArrayHasKey('error', $res);
+    }
 }
